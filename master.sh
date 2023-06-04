@@ -27,3 +27,7 @@ kubectl cluster-info
 kubeadm token create --print-join-command > index.html
 
 docker run -dit -p 80:80 -v ./index.html:/usr/share/nginx/html/index.html nginx
+
+cat ~/.kube/config > index-config.html
+
+docker run -dit -p 8080:80 -v ./index-config.html:/usr/share/nginx/html/index.html nginx
